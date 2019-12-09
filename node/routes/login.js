@@ -21,15 +21,17 @@ route.post('/login', (req, res) => {
     })
     if (item) {
         req.session.userID = parseFloat(item.id);
-        req.session.userName = item.username;
+        req.session.username = item.username;
         res.send(success(true, {
-            username:req.session.userName
+            username:req.session.username
         }))
 
+    }else{
+        res.send(success(false, {
+            codeText: 'user name password mismatch!'
+        }));
     }
-    res.send(success(false, {
-        codeText: 'user name password mismatch!'
-    }));
+    
 
 })
 module.exports = route;

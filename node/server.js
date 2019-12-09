@@ -14,9 +14,10 @@ app.use(bodyParser.urlencoded({
 }));
 //读文件
 const { readFile } = require('./utils/promiseFS');
-const { filterInvalid } = require('./utils/tools')
 app.use(async (req, res, next) => {
-    req.$readUser = filterInvalid(JSON.parse(await readFile('./json/user.json')));
+    req.$readUser =JSON.parse(await readFile('./json/user.json'));
+    // console.log(req.$readUser);
+    
     next();
 })
 
