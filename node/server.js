@@ -17,10 +17,12 @@ const { readFile } = require('./utils/promiseFS');
 app.use(async (req, res, next) => {
     req.$readUser =JSON.parse(await readFile('./json/user.json'));
     // console.log(req.$readUser);
-    
+    req.$readMain=JSON.parse(await readFile('./json/mainHeader.json'));
+    req.$classIfy=JSON.parse(await readFile('./json/classify.json'));
     next();
 })
 
 /* route */
 app.use('/user', require('./routes/login'))
-// app.use('/main', require('./routes/main'))
+app.use('/main', require('./routes/main'))
+app.use('/classify', require('./routes/classify'))
