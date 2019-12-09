@@ -5,7 +5,6 @@ const {
     writeFile
 } = require('../utils/promiseFS');
 route.post('/login', (req, res) => {
-
     let {
         username = '',
         password = ''
@@ -17,7 +16,9 @@ route.post('/login', (req, res) => {
         req.session.userID = parseFloat(item.id);
         req.session.username = item.username;
         res.send(success(true, {
-            username: req.session.username
+            username: req.session.username,
+            car:item['car'],
+            address:item["address"]
         }))
         return;
     }
@@ -26,6 +27,38 @@ route.post('/login', (req, res) => {
         }));
    
 })
+//修改用户信息
+    route.post('/update', (req, res) => {
+        req.body = req.body || {};
+        let updateUser = req.$readUser,
+           id = req.body.id,
+            flag = false;
+        // delete req.body.id;
+        updateUser = updateUser.map(item => {
+            if (parseFloat(item.id) === parseFloat(id)) {
+                flag = true;
+                return {
+                    ...item,
+                    ...req.body
+                };
+            }
+            return item;
+        });
+        // console.log();
+        
+        if (!flag) {
+            res.send(success(false));
+            return;
+        }
+        console.log(updateUser[0].car);
+         req.$readUser[0].car.push(JSON.parse(updateUser[0].car))
+        writeFile('./json/user.json',req.$readUser).then(() => {
+            res.send(success(true));
+        }).catch(() => {
+            res.send(success(false));
+        });
+    });
+
 //注册
 route.post('/add', (req, res) => {
     let userData = req.$readUser,

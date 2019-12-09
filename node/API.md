@@ -9,6 +9,21 @@ result:{
     codeText:'OK'
     username:'用户名称'
 }
+//加入购物车
+URL:/user/update
+METHOD:POST
+PARAMS:id=xxx&cat=[{
+    id:xxx,
+    title:xxx,
+    desc:xxx,
+    focus:xxx,
+    money:xxx,
+    src:xxx,
+    evaluate:xxx,
+    size:xxx,
+    color:xxx,
+    markDown:xxx
+}]
 用户注册
 URL:/user/add
 METHOD:POST

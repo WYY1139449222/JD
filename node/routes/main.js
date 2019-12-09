@@ -17,9 +17,9 @@ route.get('/all',(req,res)=>{
     }));
     return
    }
-   res.send(success(false, {
-    codeText: 'no matching data was found!'
-}));
+    res.send(success(false, {
+		codeText: 'no matching data was found!'
+	}));
   
 })
 
