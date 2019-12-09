@@ -3,10 +3,18 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 
-Vue.config.productionTip = false
+// vant 全部引入方式
+import vant from 'vant'
+import 'vant/lib/index.css'
+Vue.use(vant);
 
+
+Vue.config.productionTip = false;
 new Vue({
   router,
   store,
   render: h => h(App)
 }).$mount('#app')
+
+
+
