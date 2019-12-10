@@ -37,7 +37,7 @@ export default {
     height: 25vw;
     text-align: center;
     width: 100%;
-    padding-top:5vw;
+    padding-top:2vw;
        margin: auto;
     img{
         width: 100%;
