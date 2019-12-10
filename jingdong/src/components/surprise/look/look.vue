@@ -1,10 +1,8 @@
 <template>
   <div class="classify_Page">
-    <header class="classifyhead">
-      <van-icon name="arrow-left" @click="classback" />
-      <van-search placeholder="请输入搜索关键词" v-model="value" />
-      <van-icon name="ellipsis" size="20px" />
-    </header>
+    <my-Header>
+       <van-search placeholder="请输入搜索关键词" v-model="value" />  
+    </my-Header>
     <navlift :data="classifyList"></navlift>
   </div>
 </template>
@@ -12,6 +10,7 @@
 // @ is an alias to /src
 import navlift from "../../common/navlift";
 import { getClassify } from "@/api/index.js";
+import myherader from '@/components/common/header'
 // import particulars from '@/compnents/classify/particulars'
 export default {
   name: "XXX",
@@ -22,7 +21,8 @@ export default {
     };
   },
   components: {
-    navlift
+    navlift,
+    "my-Header":myherader
   },
   created() {
     getClassify().then(data => {
