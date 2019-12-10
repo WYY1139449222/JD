@@ -1,31 +1,28 @@
 <template>
-    <div class="main">
-      <home-header></home-header>
-      <header-nav></header-nav>
-    </div>
+  <div class="main">
+    <my-Header>惊喜</my-Header>
+    <header-nav></header-nav>
+  </div>
 </template>
 <script>
 // @ is an alias to /src
-import homeheader from './homeheader/header'
-import headernav from './homeheader/header-nav'
+import homeheader from "../../common/header";
+import headernav from "./homeheader/header-nav";
 
 export default {
-    name: 'XXX',
+  name: "XXX",
 
-    data() {
-        return {
-        
-        }
-    },
-    components: {
-    "home-header": homeheader,
-    "header-nav":headernav
-    }
-}
+  data() {
+    return {};
+  },
+  components: {
+    "my-Header": homeheader,
+    "header-nav": headernav
+  }
+};
 </script>
 <style lang="less">
-    .main{
-      // padding: 5vw;
-    }
-
+.main {
+ height: 80vw;
+}
 </style>

@@ -31,7 +31,7 @@
 <script>
 // @ is an alias to /src
 
-import headerbanner from "./banner";
+import headerbanner from "../../../common/banner";
 export default {
   name: "header-nav",
   data() {
@@ -48,11 +48,15 @@ export default {
 .header-nav {
   // position:fixed;
   // top: 0;
-  padding: 5vw;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10vw 5vw;
+  height: 70vw;
   // position: relative;
   // padding: 0;
   background: url(http://img13.360buyimg.com/jdphoto/jfs/t1/92261/22/3369/194260/5ddf6dbceffb2bdcd/34b7bfd4cb2db340.png!q70.webp);
   .header {
+    padding: 5vw 0vw 0vw 0vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
