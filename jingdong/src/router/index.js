@@ -7,6 +7,7 @@ import classify from './classify'
 import home from './home'
 import shopcat from './shopcat'
 import surprise from './surprise/surprise'
+import details from './details'
 Vue.use(VueRouter)
 
 const routes = [
@@ -23,6 +24,11 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "login" */ '../views/login.vue')
+  },
+  {
+    path:'/details',
+    name:'details',
+    component:()=> import(/* webpackChunkName: "details" */ '@/components/details.vue')
   },
   {
     path:'*',

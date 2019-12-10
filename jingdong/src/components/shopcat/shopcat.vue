@@ -2,25 +2,31 @@
   <div>
     <my-header></my-header>
     <my-main></my-main>
-    <my-footer></my-footer>
+    <footer>
+      <van-submit-bar :price="3050" button-text="提交订单" @submit="onSubmit">
+        <van-checkbox v-model="checked">全选</van-checkbox>
+      </van-submit-bar>
+    </footer>
   </div>
 </template>
 <script>
 // @ is an alias to /src
 import Hder from "./header.vue";
 import Min from "./main";
-import Fter from "./footer";
 export default {
   name: "XXX",
   data() {
-    return {};
+    return {
+      checked: []
+    };
   },
   components: {
     "my-header": Hder,
-    "my-main": Min,
-    "my-footer": Fter
+    "my-main": Min
   },
-  methods: {},
+  methods: {
+    onSubmit() {}
+  },
   computed: {}
 };
 </script>
