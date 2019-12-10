@@ -6,6 +6,8 @@ import store from './store'
 // vant 全部引入方式
 import vant from 'vant'
 import 'vant/lib/index.css'
+
+import  './less/public.less'
 Vue.use(vant);
 
 

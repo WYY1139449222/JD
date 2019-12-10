@@ -2,13 +2,13 @@
   <div class="header-nav">
     <div class="header">
       <div>
-        <van-icon name="bag" />
+        <img src="//img13.360buyimg.com/mcoss/jfs/t1/100908/14/3211/2621/5ddcd503e222cd602/41f289407630e943.png!q70.webp" alt="">
       </div>
       <div>
         <van-search placeholder="大家都在搜地毯" v-model="value" background="none" />
       </div>
       <div>
-        <van-icon name="bag" />
+       <img src="//img14.360buyimg.com/mcoss/jfs/t1/97152/30/4655/4624/5de8e5cfe4a857f59/71df23334b43fcf9.gif" alt="">
       </div>
     </div>
     <div class="nav">
@@ -30,6 +30,7 @@
 </template>
 <script>
 // @ is an alias to /src
+
 import headerbanner from "./banner";
 export default {
   name: "header-nav",
@@ -45,6 +46,8 @@ export default {
 </script>
 <style lang="less" scoped>
 .header-nav {
+  // position:fixed;
+  // top: 0;
   padding: 5vw;
   // position: relative;
   // padding: 0;
@@ -52,6 +55,14 @@ export default {
   .header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    >div{
+      >img{
+        width: 10vw;
+        height: 10vw;
+      }
+      // line-height: 15vw;
+    }
   }
   .nav {
     justify-content: space-between;
