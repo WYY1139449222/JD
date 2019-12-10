@@ -1,10 +1,13 @@
 <template>
     <div>
-        denglu 
+        <my-header>
+            我的京东
+        </my-header>
     </div>
 </template>
 <script>
 // @ is an alias to /src
+import header from '@/components/common/header.vue'
 export default {
     name: 'XXX',
     data() {
@@ -13,7 +16,7 @@ export default {
         }
     },
     components: {
-        
+        'my-header':header
     }
 }
 </script>
