@@ -29,13 +29,14 @@
       <div>
         <router-link to="/login">
         <van-icon name="contact" size="25px"/>
-          <div>未登录</div>
+          <div>{{(islogin?'我的':'未登录')}}</div>
         </router-link>
       </div>
     </nav>
   </div>
 </template>
 <script>
+import { mapState } from 'vuex';
 // @ is an alias to /src
 export default {
   name: "XXX",
@@ -53,7 +54,8 @@ export default {
     },
     iscur(){
       return this.$route.fullPath=='/'?'/home':this.$route.fullPath
-    }
+    },
+    ...mapState(['islogin'])
   },
   components: {}
 };
