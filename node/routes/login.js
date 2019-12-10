@@ -17,47 +17,45 @@ route.post('/login', (req, res) => {
         req.session.username = item.username;
         res.send(success(true, {
             username: req.session.username,
-            car:item['car'],
-            address:item["address"]
+            car: item['car'],
+            address: item["address"]
         }))
         return;
     }
-        res.send(success(false, {
-            codeText: 'user name password mismatch!'
-        }));
-   
+    res.send(success(false, {
+        codeText: 'user name password mismatch!'
+    }));
+
 })
 //修改用户信息
-    route.post('/update', (req, res) => {
-        req.body = req.body || {};
-        let updateUser = req.$readUser,
-           id = req.body.id,
-            flag = false;
-        // delete req.body.id;
-        updateUser = updateUser.map(item => {
-            if (parseFloat(item.id) === parseFloat(id)) {
-                flag = true;
-                return {
-                    ...item,
-                    ...req.body
-                };
-            }
-            return item;
-        });
-        // console.log();
-        
-        if (!flag) {
-            res.send(success(false));
-            return;
+route.post('/update', (req, res) => {
+    req.body = req.body || {};
+    let updateUser = req.$readUser,
+        id = req.body.id,
+        car=req.body.car,
+        flag = false;
+    // delete req.body.id;
+    console.log(car);
+    console.log(updateUser[id]);
+    updateUser = updateUser.map(item => {
+        if (parseFloat(item.id) === parseFloat(id)) {
+            flag = true;
         }
-        console.log(updateUser[0].car);
-         req.$readUser[0].car.push(JSON.parse(updateUser[0].car))
-        writeFile('./json/user.json',req.$readUser).then(() => {
-            res.send(success(true));
-        }).catch(() => {
-            res.send(success(false));
-        });
+        return item;
     });
+
+    if (!flag) {
+        res.send(success(false));
+        return;
+    }
+   
+    // req.$readUser[0].car.push(JSON.parse(car))
+    writeFile('./json/user.json', req.$readUser).then(() => {
+        res.send(success(true));
+    }).catch(() => {
+        res.send(success(false));
+    });
+});
 
 //注册
 route.post('/add', (req, res) => {
@@ -77,22 +75,22 @@ route.post('/add', (req, res) => {
     })
 })
 //退出登陆
-route.get('/singout',(req,res)=>{
-    req.session.userID=null;
-    req.session.username=null;
+route.get('/singout', (req, res) => {
+    req.session.userID = null;
+    req.session.username = null;
     res.send(success(true))
 });
 //检验登陆
-route.get('/login',(req,res)=>{
+route.get('/login', (req, res) => {
     const userID = req.session.userID;
-	// console.log('userID',req.session)
-	if (userID) {
-		res.send(success(true));
-		return;
-	}
-	res.send(success(false, {
-		codeText: 'current user is not logged in!'
-	}));
+    // console.log('userID',req.session)
+    if (userID) {
+        res.send(success(true));
+        return;
+    }
+    res.send(success(false, {
+        codeText: 'current user is not logged in!'
+    }));
 }
 )
 
