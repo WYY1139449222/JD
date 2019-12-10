@@ -1,6 +1,7 @@
 const CONFIG = require('./config'),
     session = require('express-session'),
-    bodyParser = require('body-parser');
+    bodyParser = require('body-parser'),
+    qs = require('qs');
 const express = require('express'),
     app = express();
 
@@ -12,6 +13,21 @@ app.use(session(CONFIG.SESSION));
 app.use(bodyParser.urlencoded({
     extended: false
 }));
+// app.use((req,res,next)=>{
+//     let str='';
+//     req.on('data',(chunk)=>{
+//         str+=chunk;
+//     })
+//     req.on('end',()=>{
+//         try {
+//             obj = JSON.parse(str)
+//         } catch (error) {
+//             obj = qs.parse(str)
+//         }
+//         req.body=obj;
+//         next();
+//     })
+// })
 //读文件
 const { readFile } = require('./utils/promiseFS');
 app.use(async (req, res, next) => {

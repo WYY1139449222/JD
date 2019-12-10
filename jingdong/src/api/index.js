@@ -8,3 +8,14 @@ export function getClassify(){
         return data.data[0]
     })
 }
+export function getupdata(option){
+    console.log(option);
+    
+    return http.post('/user/update',option).then(data=>{
+        if(data.code==0){
+            alert('成功')
+        }
+    })
+
+    
+}

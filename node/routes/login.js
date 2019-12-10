@@ -28,34 +28,47 @@ route.post('/login', (req, res) => {
 
 })
 //修改用户信息
-route.post('/update', (req, res) => {
-    req.body = req.body || {};
-    let updateUser = req.$readUser,
-        id = req.body.id,
-        car=req.body.car,
-        flag = false;
-    // delete req.body.id;
-    console.log(car);
-    console.log(updateUser[id]);
-    updateUser = updateUser.map(item => {
-        if (parseFloat(item.id) === parseFloat(id)) {
-            flag = true;
+    route.post('/update', (req, res) => {
+        req.body = req.body || {};
+        // console.log(req.body.car);
+        
+        let updateUser = req.$readUser,
+           id = req.body.id,
+            flag = false;
+        // delete req.body.id;
+        // console.log(req.body);
+        updateUser.forEach((item,index)=>{
+            if (parseFloat(item.id) === parseFloat(id)) {
+                flag = true;
+                updateUser[index].car.push(JSON.parse(req.body.car))
+            }
+        });
+        // updateUser = updateUser.map(item => {
+        //     if (parseFloat(item.id) === parseFloat(id)) {
+        //         flag = true;
+        //         return {
+        //             ...item,
+        //             ...req.body
+        //         };
+        //     }
+        //     return item;
+        // });
+        // console.log();
+        
+        if (!flag) {
+            res.send(success(false));
+            return;
         }
-        return item;
+        // console.log(JSON.parse(JSON.stringify(updateUser[0])).car);
+        //  req.$readUser[0].car.push()
+        writeFile('./json/user.json',updateUser).then(() => {
+            res.send(success(true));
+        }).catch(() => {
+            res.send(success(false));
+        });
+
     });
 
-    if (!flag) {
-        res.send(success(false));
-        return;
-    }
-   
-    // req.$readUser[0].car.push(JSON.parse(car))
-    writeFile('./json/user.json', req.$readUser).then(() => {
-        res.send(success(true));
-    }).catch(() => {
-        res.send(success(false));
-    });
-});
 
 //注册
 route.post('/add', (req, res) => {
