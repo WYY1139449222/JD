@@ -24,6 +24,7 @@ export default {
 };
 </script>
 <style lang="less" scoped>
+
  .classifyhead {
       width: 100%;
       position: fixed;
