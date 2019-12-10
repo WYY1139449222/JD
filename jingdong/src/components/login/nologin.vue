@@ -57,9 +57,6 @@ export default {
             login({
                 username: this.username,
                 password: this.psw
-            }).then(data=>{
-              console.log(data);
-              this.$router.push('/home')
             });
     },
     backFn() {

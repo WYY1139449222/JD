@@ -1,6 +1,6 @@
 <template>
-  <div class="classifyPage">
-      <header class="classifyhead">
+  <div class="classify_Page">
+      <header class="classify_head">
           <van-icon name="arrow-left" @click="classback"/>
           <van-search  placeholder="请输入搜索关键词" v-model="value" />
           <van-icon name="ellipsis" size='20px'/>
@@ -41,12 +41,12 @@ export default {
 };
 </script>
 <style lang="less" scoped>
-.classifyPage {
+.classify_Page {
   width: 100%;
   overflow: hidden;
   padding-top:12vw;
 }
-.classifyhead{
+.classify_head{
     position: fixed;
     left: 0;
     top: 0;
