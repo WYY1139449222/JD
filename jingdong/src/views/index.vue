@@ -2,13 +2,13 @@
   <div class="mainpage">
     <router-view></router-view>
     <nav class="navBox" v-show="isshow">
-      <div>
+      <div :class="{cur:iscur=='/home'}">
         <router-link to="/home">
         <van-icon name="fire-o" size="25px"/>
           <div>首页</div>
         </router-link>
       </div>
-      <div>
+      <div :class="{cur:iscur=='/classify'}">
         <router-link to="/classify">
           <van-icon name="apps-o" size="25px"/>
           <div>分类</div>
@@ -41,24 +41,27 @@ export default {
   name: "XXX",
   data() {
     return {
-      idshow:''
     };
   },
   methods: {
-    fn(){
-      console.log(this);
-      
-    }
+    
   },
+
   computed: {
     isshow(){
       return !(/^\/surprise/.test(this.$route.fullPath))
+    },
+    iscur(){
+      return this.$route.fullPath=='/'?'/home':this.$route.fullPath
     }
   },
   components: {}
 };
 </script>
 <style lang="less" scoped>
+.mainpage{
+  padding-bottom:15vw;
+}
 .navBox{
     height: 15vw;
     width: 100%;
@@ -68,7 +71,13 @@ export default {
     display: flex;
     align-items: center;
     border-top: 1px solid #eee;
+    background: #fff;
     >div{
+      &.cur{
+        >a{
+          color:red
+        }
+      }
         flex: 1;
         >a{
           display: block;
