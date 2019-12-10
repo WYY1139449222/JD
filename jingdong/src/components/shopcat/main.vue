@@ -1,6 +1,11 @@
 <template>
   <main>
-    <MyArea></MyArea>
+    <div class="areaBox">
+      <MyArea></MyArea>
+      <div ref="ref" class="redact" @click="reset">
+        编辑商品
+      </div>
+    </div>
     <span class="isLogin">
       登录后可同步账户购物车中的商品
       <van-button type="warning" size="small" color="red">登录</van-button>
@@ -51,7 +56,7 @@
 </template>
 <script>
 // @ is an alias to /src
-import MyArea from './Area'
+import MyArea from "./Area";
 export default {
   name: "XXX",
   data() {
@@ -65,6 +70,13 @@ export default {
   components: {
     MyArea
   },
+  methods: {
+    reset() {
+      console.log(this)
+      let str = this.$refs.ref.innerText;
+      this.$refs.ref.innerText = str == "编辑商品" ? "完成" : "编辑商品";
+    }
+  }
 };
 </script>
 <style lang="less">
@@ -148,5 +160,19 @@ export default {
 }
 main {
   background: #ddd;
+  .areaBox {
+    display: flex;
+    > div:nth-child(1) {
+      flex: 7.5;
+      height: 11.8vw;
+      line-height: 11.8vw;
+    }
+    > div:nth-child(2) {
+      flex: 2.5;
+      background: #fff;
+      padding-top: 3vw;
+      box-sizing: border-box;
+    }
+  }
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div class="Area">
     <div class="areaList">
-      <van-icon name="location-o" />&nbsp;
+      <van-icon />&nbsp;
       <span @click="showOption" v-text="aList"></span>
       <van-popup v-model="show" position="bottom" :style="{ height: '60%' }">
         <van-area
@@ -12,9 +12,6 @@
           title="选择区域"
         />
       </van-popup>
-    </div>
-    <div ref="ref" class="redact" @click="reset">
-      编辑商品
     </div>
   </div>
 </template>
@@ -44,18 +41,12 @@ export default {
         `${val[0].name}-${val[1].name}-${val[2].name}` || "请选择区域";
       this.show = !this.show;
     },
-    reset() {
-      let str = this.$refs.ref.innerText;
-      this.$refs.ref.innerText = str == "编辑商品" ? "完成" : "编辑商品";
-    }
   }
 };
 </script>
 <style lang="less">
 .Area {
   background: #fff;
-  height: 11.8vw;
-  line-height: 11.8vw;
   display: flex;
   font-size: 14px;
   border-bottom: 1px solid #eee;

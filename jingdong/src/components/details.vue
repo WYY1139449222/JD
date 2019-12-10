@@ -57,7 +57,7 @@
         <div class="area">
           <span>送至</span>
           <div>
-            <p>太阳</p>
+            <AreaList></AreaList>
             <p>
               <span>现货</span>
               <small
@@ -110,6 +110,7 @@
 
 <script>
 // @ is an alias to /src
+import AreaList from './shopcat/Area.vue'
 export default {
   name: "XXX",
   data() {
@@ -126,7 +127,9 @@ export default {
   created() {
     console.log(this.ary);
   },
-  components: {}
+  components: {
+    AreaList
+  }
 };
 </script>
 <style lang="less">
@@ -178,6 +181,9 @@ nav {
     > span:nth-child(1) {
       margin-right: 2vw;
     }
+    > span:nth-child(2) {
+      font-size: 14px;
+    }
   }
 }
 .privilege {
@@ -205,6 +211,7 @@ nav {
     display: flex;
     > span {
       flex: 1;
+      font-size:14px;
     }
     > div {
       flex: 8;
@@ -230,17 +237,18 @@ nav {
       display: flex;
       > span {
         flex: 1;
+        font-size: 14px;
       }
       > div {
         flex: 8;
         > p {
           margin: 1vw 0;
         }
-        > p:nth-child(1) {
-          font-size: 14px;
-        }
         > p:nth-child(2) {
-          font-size: 16px;
+          font-size: 14px;
+          >span{
+            color:red;
+          }
         }
       }
       > i {
