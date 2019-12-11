@@ -80,15 +80,6 @@
     "username": "wangxuan",
     "password": "123456",
     "address": "臭水沟"
-<<<<<<< HEAD
-}, {
-    "id": 3,
-    "name": "你好",
-    "username": "123",
-    "password": "123"
-}]
-=======
   },
   { "id": 3, "name": "你好", "username": "123", "password": "123" }
 ]
->>>>>>> 4f620e56556b534666490c5b73da727767ec1b2b
