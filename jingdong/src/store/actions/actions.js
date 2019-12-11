@@ -4,7 +4,7 @@ import router from '@/router'
 export function changeIslogin({commit},option){
     login(option).then(data=>{
         if(data.code==0){
-            commit('changeIslogin',option)
+            commit('changeIslogin',data)
             router.back()
         }else{
             alert('账号密码错误')

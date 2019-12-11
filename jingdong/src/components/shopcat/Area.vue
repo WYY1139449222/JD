@@ -49,7 +49,6 @@ export default {
   background: #fff;
   display: flex;
   font-size: 14px;
-  border-bottom: 1px solid #eee;
   overflow: hidden;
   box-sizing: border-box;
   .areaList {

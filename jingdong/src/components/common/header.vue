@@ -130,6 +130,5 @@ export default {
         border-bottom: none;
       }
     }
-  }
-}
+  
 </style>

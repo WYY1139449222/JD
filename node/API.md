@@ -14,17 +14,20 @@ URL:/user/update
 METHOD:POST
 PARAMS:{
     id=xxx&cat=JSON.stringify({
-                    id:xxx,
-                    title:xxx,
-                    desc:xxx,
-                    focus:xxx,
-                    money:xxx,
-                    src:xxx,
-                    evaluate:xxx,
-                    size:xxx,
-                    color:xxx,
-                    markDown:xxx
-})
+                    storeId:Num,
+                    name:Str,
+                    joincart:[{
+                        id:Num,
+                        title:Str,
+                        desc:Str,
+                        size:[Str,Str],
+                        price:Num,
+                        src:Str,
+                        isSelect:Boolean,
+                        color:[Str,Str],
+                        markDown:Str
+                    }]
+                })
 }
 用户注册
 URL:/user/add
