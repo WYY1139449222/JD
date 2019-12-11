@@ -11,7 +11,9 @@
           <span>用户名： {{islogin}}</span>
         </div>
         <div>
-          <van-icon name="setting" />账户管理
+         <router-link to="/login/user">
+            <van-icon name="setting" />账户管理
+         </router-link>
         </div>
         <div class="sinBoxNavL">
           <img

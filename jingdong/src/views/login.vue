@@ -1,32 +1,22 @@
 <template>
-  <div>
-    <nologin v-if="!islogin"></nologin>
-    <singol v-else></singol>
-  </div>
+    <div>
+        <router-view></router-view>
+    </div>
 </template>
 <script>
 // @ is an alias to /src
-import nologin from '../components/login/nologin'
-import singol from '@/components/login/singol'
-import {mapState} from 'vuex'
 export default {
-  
-  data() {
-    return {
-      username: "",
-      psw: "",
-      isPsw: "password"
-    };
-  },
-  components:{
-    nologin,
-    singol
-  },
-  computed: {
-   ...mapState(['islogin'])
-  },
+    name: 'XXX',
+    data() {
+        return {
+        
+        }
+    },
+    components: {
+        
+    }
 }
 </script>
-<style lang="less" scoped>
+<style lang="less">
 
 </style>

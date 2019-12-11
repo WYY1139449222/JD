@@ -31,7 +31,6 @@ route.post('/login', (req, res) => {
     route.post('/update', (req, res) => {
         req.body = req.body || {};
         // console.log(req.body.car);
-        
         let updateUser = req.$readUser,
            id = req.body.id,
             flag = false;
@@ -43,24 +42,12 @@ route.post('/login', (req, res) => {
                 updateUser[index].car.push(JSON.parse(req.body.car))
             }
         });
-        // updateUser = updateUser.map(item => {
-        //     if (parseFloat(item.id) === parseFloat(id)) {
-        //         flag = true;
-        //         return {
-        //             ...item,
-        //             ...req.body
-        //         };
-        //     }
-        //     return item;
-        // });
-        // console.log();
         
         if (!flag) {
             res.send(success(false));
             return;
         }
-        // console.log(JSON.parse(JSON.stringify(updateUser[0])).car);
-        //  req.$readUser[0].car.push()
+
         writeFile('./json/user.json',updateUser).then(() => {
             res.send(success(true));
         }).catch(() => {

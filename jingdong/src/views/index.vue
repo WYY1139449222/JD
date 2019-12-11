@@ -22,7 +22,6 @@ export default {
       return /^\/(home)|(classify)/.test(this.$route.fullPath)
     },
   },
-  
   components: {
     homenav
   }
