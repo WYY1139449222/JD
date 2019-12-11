@@ -19,7 +19,7 @@
       </van-cell-group>
     </section>
     <van-button round type="info" class="loginBtn" :class="{cur:username&&psw}" @click="loginFn">登录</van-button>
-    <van-button round type="info" class="oneloginBtn">一键登录</van-button>
+    <van-button round type="info" class="oneloginBtn" @click="register">注册</van-button>
     <div class="otheradd">
       <span>短信验证码登录</span>
       <span>手机快速注册</span>
@@ -59,13 +59,16 @@ export default {
   },
   methods: {
     loginFn() {
-      this.$store.dispatch('changeIslogin',{
+      this.$store.dispatch("changeIslogin", {
         username: this.username,
         password: this.psw
       });
     },
     backFn() {
       this.$router.back();
+    },
+    register() {
+      this.$router.push('/login/register')
     },
     changePsw() {
       this.isPsw = this.isPsw == "password" ? "" : "password";

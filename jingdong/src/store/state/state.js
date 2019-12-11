@@ -1,5 +1,6 @@
 let islogin = localStorage.getItem("username");
-let arrayCar = JSON.parse(localStorage.getItem('arrayCar'))
+let arr = JSON.parse(localStorage.getItem('arrayCar'))
+let arrayCar = arr ? arr : []
 export default {
   islogin,
   arrayCar
