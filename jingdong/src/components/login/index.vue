@@ -6,8 +6,8 @@
 </template>
 <script>
 // @ is an alias to /src
-import nologin from '../components/login/nologin'
-import singol from '@/components/login/singol'
+import nologin from './nologin'
+import singol from './singol/index'
 import {mapState} from 'vuex'
 export default {
   

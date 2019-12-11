@@ -7,7 +7,6 @@ import classify from './classify'
 import home from './home'
 import shopcat from './shopcat'
 import surprise from './surprise/surprise'
-import details from './details'
 Vue.use(VueRouter)
 
 const routes = [
@@ -24,7 +23,15 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "login" */ '../views/login.vue')
+    component: () => import(/* webpackChunkName: "login" */ '@/components/login/index.vue'),
+    children:[
+      {
+        path:'/login/user',
+        name:'user',
+        component: () => import(/* webpackChunkName: "login" */ '@/components/login/singol/user.vue'),
+
+      }
+    ]
   },
   {
     path:'/details',
