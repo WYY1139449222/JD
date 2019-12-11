@@ -26,6 +26,7 @@ export default {
 <style lang="less" scoped>
  .classifyhead {
       width: 100%;
+      height:13vw;
       position: fixed;
       left: 0;
       top: 0;
