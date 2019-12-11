@@ -1,25 +1,27 @@
 <template>
-  <div class="cartBox">
-    <MyHead></MyHead>
-    <Mymain></Mymain>
-    <Store
-      v-for="item in arrayCar"
-      :qqq="item"
-      :key="item.storeId"
-      @change="changeAll"
-    >
-    </Store>
 
-    <footer>
-      <van-submit-bar
-        :price="AllMoney"
-        button-text="去结算(？件)"
-        @submit="onSubmit"
+    <div class="cartBox">
+      <MyHead></MyHead>
+      <Mymain></Mymain>
+      <Store
+        v-for="item in arrayCar"
+        :qqq="item"
+        :key="item.storeId"
+        @change="changeAll"
       >
-        <van-checkbox v-model="AllSelect">全选</van-checkbox>
-      </van-submit-bar>
-    </footer>
-  </div>
+      </Store>
+
+      <footer>
+        <van-submit-bar
+          :price="AllMoney"
+          button-text="去结算(？件)"
+          @submit="onSubmit"
+        >
+          <van-checkbox v-model="AllSelect">全选</van-checkbox>
+        </van-submit-bar>
+      </footer>
+    </div>
+
 </template>
 <script>
 // @ is an alias to /src
@@ -68,13 +70,13 @@ export default {
       }
     },
     AllMoney() {
-      return 100
+      return 10000;
     }
   },
   created() {}
 };
 </script>
-<style lang="less" scope>
+<style lang="less" >
 .cartBox {
   background: #ccc;
   > div:nth-child(1) {

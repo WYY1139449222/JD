@@ -59,56 +59,13 @@ export default {
 };
 </script>
 <style lang="less" scoped>
-.classifyhead {
-  width: 100%;
-  position: fixed;
-  left: 0;
-  top: 0;
-  background: #fff;
-  box-sizing: border-box;
-  z-index: 999;
-  padding: 1vw 3vw;
-  display: flex;
-  align-items: center;
-  // border-bottom: 1px solid #eee;
-  justify-content: space-between;
-  height: 12vw;
-  //   .headleft{
-  //      width: 5vw;
-  //   }
-  //   .headright{
-  //      width: 5vw;
-  //   }
-  .slotBox {
-    flex: 1;
-  }
-}
-.outnav {
-  position: fixed;
-  top: 17vw;
-  right: 2vw;
-  background: rgba(0, 0, 0, 0.8);
-  height: 58vw;
-  width: 35vw;
-  z-index: 999;
-  border-radius: 5px;
-  font-size: 4vw;
-  .xsj {
-    height: 0;
-    width: 0;
-    border-bottom: 1.5vw solid rgba(0, 0, 0, 0.8);
-    border-top: 1.5vw solid transparent;
-    border-left: 2vw solid transparent;
-    border-right: 2vw solid transparent;
-    position: absolute;
-    top: -3vw;
-    right: 1vw;
-  }
-  > ul {
-    // display: flex;
-    > li {
-      color: #fff;
-      height: 14.5vw;
+ .classifyhead {
+      width: 100%;
+      height:13vw;
+      position: fixed;
+      left: 0;
+      top: 0;
+      background: #fff;
       box-sizing: border-box;
       line-height: 14.5vw;
       padding-left: 1.5vw;
@@ -133,6 +90,5 @@ export default {
         border-bottom: none;
       }
     }
-  }
-}
+  
 </style>
