@@ -50,13 +50,13 @@ export default {
   // top: 0;
   box-sizing: border-box;
   width: 100%;
-  padding: 10vw 5vw;
+  padding: 0vw 5vw;
   height: 70vw;
   // position: relative;
   // padding: 0;
   background: url(http://img13.360buyimg.com/jdphoto/jfs/t1/92261/22/3369/194260/5ddf6dbceffb2bdcd/34b7bfd4cb2db340.png!q70.webp);
   .header {
-    padding: 5vw 0vw 0vw 0vw;
+    padding: 1vw 0vw 0vw 0vw;
     display: flex;
     justify-content: space-between;
     align-items: center;

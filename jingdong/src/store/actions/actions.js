@@ -1,4 +1,4 @@
-import {login} from '@/api/login.js'
+import {login,singout} from '@/api/login.js'
 import router from '@/router'
 
 export function changeIslogin({commit},option){
@@ -11,5 +11,15 @@ export function changeIslogin({commit},option){
         }
         return data
     })
-    
+}
+export function changeSingOut({commit}){
+      singout().then(data=>{
+          if(data.code==0){
+              commit('changeSingOut')
+              router.push('/');
+            // window.location.href('/')
+          }
+          return data
+      })
+      
 }

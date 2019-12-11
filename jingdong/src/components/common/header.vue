@@ -61,9 +61,6 @@ export default {
 <style lang="less" scoped>
 .classifyhead {
   width: 100%;
-  position: fixed;
-  left: 0;
-  top: 0;
   background: #fff;
   box-sizing: border-box;
   z-index: 999;
